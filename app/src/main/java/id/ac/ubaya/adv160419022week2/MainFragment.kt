@@ -10,8 +10,6 @@ import kotlinx.android.synthetic.main.fragment_main.*
 
 
 class MainFragment : Fragment() {
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,8 +21,10 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnStart.setOnClickListener {
+//            Ambil nama pemain
+            val playerName = txtName.text.toString()
 //            Dapatkan action yg ingin dijalankan
-            val action = MainFragmentDirections.actionGameFragment()
+            val action = MainFragmentDirections.actionGameFragment(playerName)
 //            Jalankan action tsb
             Navigation.findNavController(it).navigate(action)
         }

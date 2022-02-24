@@ -28,6 +28,12 @@ class MainFragment : Fragment() {
 //            Jalankan action tsb
             Navigation.findNavController(it).navigate(action)
         }
+
+        // Untuk memunculkan dialog tidak perlu alert dialog
+        buttonOptions.setOnClickListener{
+            val action = MainFragmentDirections.actionOptionsFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
 }
